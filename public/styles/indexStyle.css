@@ -1,0 +1,91 @@
+main #slideshow{
+    position: relative; 
+    margin-top: 10rem;
+    border-radius:20px;
+}
+
+.slick {
+	text-align:center;
+}
+
+.slick ul button {
+	width:10px;
+	height:10px;
+	border-radius:25px;
+	font-size:0px;color:white;
+	line-height:100px;
+	background:white;
+	display:inline;
+	margin:0px;
+	padding:0px;
+	border: solid 1.5px #572E0D;
+    cursor: pointer;
+}
+
+.slick ul button:focus {
+	width:10px;
+	height:10px;
+	background-color:#572E0D;
+	display:inline;
+	margin:0px;
+	padding:0px;
+	outline:none;
+}
+
+.slick ul {
+    margin-right: 4rem;
+}
+
+.slick li {
+	display:inline;
+	padding:8px;
+    
+}
+
+.mainInfo{
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.mainInfo .info {
+    width: 100%;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 18px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    z-index: 1;
+}
+
+.mainInfo button {
+    width: 12.5rem;
+    height: 4rem;
+    margin-top: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: larger;
+    color: white;
+    background-color: #572E0D;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.mainInfo button:active{
+    background-color: #3b1f09;
+}
+
+.mainInfo .image {
+    width: fit-content;
+    padding-top: 3rem;
+    margin-left: auto;
+    position: relative;
+    z-index: -2;
+}
+
+.image img{
+    width: 35rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    position: relative;
+    z-index: -2;
+}

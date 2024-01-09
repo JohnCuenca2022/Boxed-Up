@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/indexStyle.css">
+    <link rel="stylesheet" href="styles/headerFooterStyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation/css/font-awesome-animation.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://kit.fontawesome.com/8726264b68.js" crossorigin="anonymous"></script>
+    
+    <title>Home</title>
+    <link rel="icon" href="assets/logo_regular.png">
+</head>
+<body>
+    <script type=module src=headerFooter.js></script>
+
+    <my-header></my-header>
+
+    <main>
+        <section id="slideshow">
+            <div class="slick" style="position: relative; margin-top: 10rem;border-radius:20px;overflow: hidden;">
+                <div><img src="assets/burger_sample.gif" alt="burger_sample" style="width:100%;height:400px;border-radius:20px;"></div>
+                <div><img src="assets/Carousel2.png" alt="testimage" style="width:100%;height:400px;border-radius:20px"></div>
+                <div><img src="assets/testimage2.png" alt="testimage2" style="width:100%;height:400px;border-radius:20px"></div>
+            </div>
+        </section>
+        <div class = "mainInfo">
+            <div class="info">
+                <h1>DELICIOUS SNACKS TO SATISFY</h1>
+                <h1>YOUR CRAVINGS</h1>
+                <button id="ordernow">Order Now</button>
+            </div>
+            <div class="image">
+                <img src="assets/HomepagePic.png" alt="home burger">
+            </div>
+        </div>
+    </main>
+
+    <my-footer></my-footer>
+
+    <!--navbar highlight-->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="navActive.js"></script>
+
+    <!--slick carousel-->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"></script>
+    <script src="carousel.js"></script>
+</body>
+<script defer type="module" src="homeApp.js"></script>
+</html>

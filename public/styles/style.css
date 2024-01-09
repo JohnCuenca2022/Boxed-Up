@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+@font-face { 
+    font-family: Montserrat-Regular;
+    src: url(fonts/Montserrat-Regular.otf);
+}
+
+:root {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    --text-primary: #572E0D;
+    --bg-primary: #F0E4BB;
+}
+
+body {
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-top: 10rem;
+    width: 80%;
+    padding:0;
+    margin:0;
+    margin:auto;
+}
+
+input{
+    font-size: large;
+    font-family: Montserrat-Regular;
+}
+
+textarea{
+    font-size: large;
+    font-family: Montserrat-Regular;
+}
+
+button{
+    font-family: Montserrat-Regular;
+}
+
+body::-webkit-scrollbar{
+    width: 0.25rem;
+    background-color: #000000;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+  
+body::-webkit-scrollbar-thumb {
+    background: var(--text-primary);
+}
+
+.swal2-popup {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.icon-left {
+    margin-left: 0px !important;
+}
+.button-width {
+    outline: none !important;
+    width: 325px;
+    height: 59px;
+    border-radius: 30px !important;
+}
+.button-width2 {
+    outline: none !important;
+    width: 13rem;
+    height: 2.5rem;
+    border-radius: 30px !important;
+}
+.popup-wrap {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+}
+.htmlContainer-italicize {
+    font-style: italic !important;
+}
+.popup-style {
+    border-radius: 30px !important;
+}
+.icon-style {
+    width: 128px !important;
+    height: 128px !important;
+    border: 0 !important;
+}
+.swal-icon--success{ 
+    border-color:#572E0D !important; 
+}
+.swal2-icon.swal2-success {
+    color: #572E0D !important;
+    border-color: #572E0D !important;
+}
+.swal2-icon.swal2-success .swal2-success-ring{
+    border: .25em solid rgba(87,46,13,0.5) !important;
+}
+.swal2-success-line-tip{
+    background-color: #572E0D !important;
+}
+.swal2-success-line-long{
+    background-color: #572E0D !important;
+}
+.swal2-styled{
+    box-shadow: none !important;
+}

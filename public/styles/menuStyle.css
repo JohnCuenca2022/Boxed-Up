@@ -1,0 +1,252 @@
+@font-face { 
+    font-family: Montserrat-Regular;
+    src: url(fonts/Montserrat-Regular.otf);
+}
+
+@font-face { 
+    font-family: Montserrat-Thin;
+    src: url(fonts/Montserrat-Thin.otf);
+}
+
+@font-face { 
+    font-family: Montserrat-SemiBold;
+    src: url(fonts/Montserrat-SemiBold.otf);
+}
+
+@font-face { 
+    font-family: Montserrat-LightItalic;
+    src: url(fonts/Montserrat-LightItalic.otf);
+}
+
+.menuContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 0.5fr);
+    justify-content: center;
+    padding-bottom: 5rem;
+    margin-top: 10rem;
+}
+
+.box{
+    width: 80%;
+	border-radius: 20px;
+    background-color:#F6EED4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 3rem;
+    justify-self: center;
+    cursor: pointer;
+}
+
+.box:hover > img{
+    transform: scale(1.1);
+    transition: all ease 500ms;
+}
+
+.box img{
+    width:80%;
+    height: 10rem;
+    display: block;
+    margin-top:3rem;
+    margin-bottom:3rem;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    border-radius: 35px;
+}
+
+.box h2{
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+/* PopUp Form */
+.popUpBox{
+    width: 30rem;
+    height: fit-content;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-top: -8rem; /* Negative half of height. */
+    margin-left: -250px; /* Negative half of width. */
+	border-radius: 20px;
+    background-color: white;
+    padding-top: 1rem;
+    position: fixed;
+    z-index: 80;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s ease-out;
+}
+
+.orderPopUp {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100vh;
+    z-index:1;
+    background:transparent;
+    display:none;
+}
+
+.popUpBox img{
+    height: 200px;
+    width: 200px;
+    border: 2px black solid;
+}
+
+.drag-area{
+    border: 2px dashed #572E0D;
+    height: 60%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.drag-area.active{
+    border: 2px solid #572E0D;
+}
+.drag-area h3{
+    color: #9A4B0D;
+    opacity: 0.7;
+}
+
+.drag-area button{
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: #B57C48;
+    color: white;
+    cursor: pointer;
+}
+.drag-area button:active {
+    background-color: #96653c;
+}
+.drag-area img{
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* remove scroll function in number input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#upbtn{
+    margin-top:1.5rem;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: #B57C48;
+    color: white;
+    cursor: pointer;
+}
+#upbtn:active {
+    background-color: #96653c;
+}
+
+.orderqtytxtbox{
+    border-radius: 8px;
+    border: rgb(154, 75, 13, 0.7) solid 2px;
+    background-color: white;
+    padding-left: 0.1rem;
+    height: 1.5rem;
+    outline:none;
+    resize: none;
+    text-align: left;
+    margin: auto;
+    width: 95%;
+    transition: all 0.5s ease;
+}
+
+.orderQuantity{
+    grid-column:  8 / 10;
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+}
+
+.orderQuantity input{
+    font-size:1rem;
+    width:3rem;
+    text-align:center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+    grid-column:  3 / 4;
+}
+
+.orderQuantity button{
+    background: none;
+    outline: none;
+    border:none;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color:#572E0D;
+}
+
+.orderQuantity button:active:focus{
+    border:none;
+    background: none;
+    outline: none;
+}
+
+.orderQuantity button:hover{
+    cursor: pointer;
+}
+
+.ordertxtbox {
+    border-radius: 8px;
+    border: hsla(26, 84%, 33%, 0.7) solid 2px;
+    background-color: white;
+    padding-left: 0.1rem;
+    height: 3rem;
+    outline:none;
+    resize: none;
+    text-align: left;
+    margin: auto;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+
+.orderInstructions textarea {
+    font-size:1rem;
+}
+
+.placeOrderContainer{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.placeOrderButton{
+    border-radius: 20px;
+    background-color: #B57C48;
+    border: none;
+    width: 40%;
+    height: 2.5rem;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  	cursor: pointer;
+    margin: auto;
+    letter-spacing: 0.1rem;
+}
+
+.placeOrderButton:active {
+    background-color: #96653c;
+}

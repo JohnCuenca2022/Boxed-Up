@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/userActionStyle.css">
+    <link rel="stylesheet" href="styles/headerFooterStyle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation/css/font-awesome-animation.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://kit.fontawesome.com/8726264b68.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+
+    <title id="docTitle"></title>
+    <link rel="icon" href="assets/logo_regular.png">
+</head>
+<body>
+    <script type=module src=headerFooter.js></script>
+
+    <my-header></my-header>
+    <main>
+        <div class="titleContainer" style="margin-bottom: 4rem;">
+            <h1 id="topheader"><em></em></h1>
+        </div>
+        
+        <div class="rcorners1">
+            <div id="textitem">
+                <div id="emailInputContainer">
+                    <div id="labelContainer">
+                        <h2><em>Email</em></h2>
+                    </div>
+                    <input type="text" class="txtbox" id="email" required style="font-size:18px;"/>
+                </div>
+
+                <div id="labelContainer">
+                    <h2><em>Password</em></h2>
+                </div>
+                <div>
+                    <input type="password" name="password" autocomplete="current-password" required id="id_password" 
+                    style="font-size:18px; position:relative; z-index: 1;"/>
+                    <i class="far fa-eye" id="togglePassword" style="font-size:20px; position:absolute; z-index: 3; 
+                    margin-left: -2.5rem; margin-top: 0.75rem;"></i>
+                </div>
+
+                <div id="labelContainer">
+                    <h2><em>Confirm Password</em></h2>
+                </div>
+                <div>
+                    <input type="password" name="password" autocomplete="current-password" required id="id_password2" 
+                    style="font-size:18px; margin-bottom: 3rem; position:relative; z-index: 1;"/>
+                    <i class="far fa-eye" id="togglePassword2" style="font-size:20px; position:absolute; z-index: 3; 
+                    margin-left: -2.5rem; margin-top: 0.75rem;"></i>
+                </div>
+                
+                <div id="labelContainer" style="padding-bottom: 5rem;">
+                    <button class="buttondiv" id="signUp"><b id="actionButtonText">Sign Up</b></button>
+                    <button class="buttondiv" id="resetPassword"><b id="actionButtonText">Submit</b></button> 
+                </div>
+            </div> 
+        </div>
+    </main>
+    <my-footer></my-footer>
+    <!--toggle pass visibility-->
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#id_password');
+        
+        togglePassword.addEventListener('click', function (e) {
+          // toggle the type attribute
+          const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+          password.setAttribute('type', type);
+          // toggle the eye slash icon
+          this.classList.toggle('fa-eye-slash');
+        });
+        
+        const togglePassword2 = document.querySelector('#togglePassword2');
+        const password2 = document.querySelector('#id_password2');
+        
+        togglePassword2.addEventListener('click', function (e) {
+          // toggle the type attribute
+          const type2 = password2.getAttribute('type') === 'password' ? 'text' : 'password';
+          password2.setAttribute('type', type2);
+          // toggle the eye slash icon
+          this.classList.toggle('fa-eye-slash');
+        });
+        </script>
+
+    <!--navbar highlight-->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="navActive.js"></script>
+</body>
+<script defer type="module" src="userActionApp.js" ></script>
+</html>

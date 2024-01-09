@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/sign-upStyle.css">
+    <link rel="stylesheet" href="styles/headerFooterStyle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation/css/font-awesome-animation.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://kit.fontawesome.com/8726264b68.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <title>Sign Up</title>
+    <link rel="icon" href="assets/logo_regular.png">
+</head>
+<body>
+    <script type=module src=headerFooter.js></script>
+
+    <my-header></my-header>
+    <main>
+        <div class="titleContainer" style="margin-bottom: 4rem;">
+            <h1><em>CREATE ACCOUNT</em></h1>
+        </div>
+        
+        <div class="rcorners1">
+            <div id="textitem">
+                <div id="labelContainer">
+                    <h2><em>Email</em></h2>
+                </div>
+                <input type="text" class="txtbox" id="email" required style="font-size:18px;"/>
+                <div style="margin:auto;text-align:center;width:fit-content;padding-top: 3rem;">
+                    <div id="recaptcha"></div>
+                </div>
+                <div id="labelContainer" style="padding-bottom: 5rem;padding-top: 1rem;">
+                    <button class="buttondiv" id="signup"><b>Sign Up</b></button> 
+                </div>
+            </div> 
+        </div>
+    </main>
+    <my-footer></my-footer>
+
+    <!--navbar highlight-->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="navActive.js"></script>
+</body>
+<script defer type="module" src="signUpApp.js" ></script>
+</html>

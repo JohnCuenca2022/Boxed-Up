@@ -1,0 +1,441 @@
+@font-face { 
+    font-family: Montserrat-Thin;
+    src: url(fonts/Montserrat-Thin.otf);
+}
+
+.title {
+    margin-top: 12rem;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 60.95px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.boxContainer{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    padding-bottom: 1.5rem;
+}
+
+.box{
+    width: 96%;
+	border-radius: 20px;
+    background-color:#F6EED4;
+    grid-column: 1 / 3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: inline;
+}
+
+.box img{
+    width:12rem;
+    height:12em;
+    margin-left: auto;
+    margin:auto;
+}
+
+.box2{
+    width: 100%;
+	border-radius: 20px;
+    background-color:#F6EED4;
+    padding-top: 1rem;
+    margin-left:auto;
+    grid-column: 1 / 6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.textitem{
+	padding-top: 0.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.labelContainer{
+    text-align: center;
+    margin: auto;
+}
+
+.txtbox {
+    border-radius: 20px;
+    border: #572E0D solid 2px;
+    background-color: #F9F3E2;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    height: 0.25rem;
+    outline:none; 
+    resize: none;
+    text-align: left;
+    margin: auto;
+    width: 95%;
+}
+
+.txtbox:read-only{
+    background-color: #e8e3d3;
+}
+
+h3{
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.buttondiv{
+    border-radius: 20px;
+    background-color: #B57C48;
+    border: none;
+    width: 98%;
+    height: 2.5rem;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  	cursor: pointer;
+    margin: auto;
+    display: block;
+    letter-spacing: 0.1rem;
+}
+
+.buttondiv:active {
+    background-color: #96653c;
+}
+
+.buttondiv:disabled{
+    pointer-events: none;
+    background-color: #96653c;
+}
+
+.navbutton{
+    border-radius: 20px;
+    background-color:#F6EED4;
+    border: solid #572E0D 2px;
+    width: 98%;
+    height: 2.5rem;
+    color: #572E0D;
+    font-size: 20px;
+    text-align: center;
+  	cursor: pointer;
+    margin: auto;
+    display: block;
+    letter-spacing: 0.1rem;
+}
+
+.navbutton:active {
+    background-color: #96653c;
+    color: white;
+    border: none;
+}
+
+.navbuttonselected{
+    border-radius: 20px;
+    background-color: #B57C48;
+    border: solid #572E0D 2px;
+    width: 98%;
+    height: 2.5rem;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  	cursor: pointer;
+    margin: auto;
+    display: block;
+    letter-spacing: 0.1rem;
+}
+
+.navbuttonselected:active {
+    background-color: #96653c;
+}
+
+.orderslist{
+    display:none;
+}
+
+.imageContainer img:hover {
+    -webkit-filter: blur(3px); /* Chrome, Safari, Opera */
+    filter: blur(3px);
+    cursor: pointer;
+}
+
+/* PopUp Form */
+.popUpBox{
+    width: 30rem;
+    height: 20rem;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    margin-top: -8rem; /* Negative half of height. */
+    margin-left: -250px; /* Negative half of width. */
+	border-radius: 20px;
+    background-color: white;
+    padding-top: 1rem;
+    position: fixed;
+    z-index: 80;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s ease-out;
+}
+
+.editImagePopUp {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100vh;
+    z-index:1;
+    background:transparent;
+    display:none;
+}
+
+.popUpBox img{
+    height: 200px;
+    width: 200px;
+    border: 2px black solid;
+}
+
+.drag-area{
+    border: 2px dashed #572E0D;
+    height: 60%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.drag-area.active{
+    border: 2px solid #572E0D;
+}
+.drag-area h3{
+    color: #9A4B0D;
+    opacity: 0.7;
+}
+.drag-area button{
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: #B57C48;
+    color: white;
+    cursor: pointer;
+}
+.drag-area button:active {
+    background-color: #96653c;
+}
+.drag-area img{
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#upbtn{
+    margin-top:1.5rem;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: #B57C48;
+    color: white;
+    cursor: pointer;
+}
+#upbtn:active {
+    background-color: #96653c;
+}
+
+.orderBox{
+    width: 100%;
+	border-radius: 20px;
+    background-color:#F6EED4;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    margin-left:auto;
+    grid-column: 1 / 6;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.orderImage{
+    grid-column: 1 / 2;
+}
+
+.orderImage img{
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.orderName{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    grid-column: 2 / 5;
+}
+
+.orderName h3{
+    overflow-wrap: anywhere;
+}
+
+.orderInstructions{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    grid-column:  5 / 8;
+}
+
+.ordertxtbox {
+    border-radius: 8px;
+    border: rgb(154, 75, 13, 0.7) solid 1px;
+    background-color: #F9F3E2;
+    padding-left: 0.1rem;
+    height: 2rem;
+    outline:none;
+    resize: none;
+    text-align: left;
+    margin: auto;
+    width: 95%;
+    transition: all 0.5s ease;
+}
+
+.orderInstructions textarea {
+    font-family: inherit;
+    font-size:1rem;
+}
+
+.orderInstructions textarea:focus {
+    height: 5rem;
+}
+
+.orderQuantity{
+    grid-column:  8 / 10;
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+}
+
+.orderQuantity input{
+    font-size:1rem;
+    width:3rem;
+    text-align:center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    grid-column:  3 / 4;
+}
+
+.orderQuantity button{
+    background: none;
+    outline: none;
+    border:none;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color:#572E0D;
+}
+
+.orderQuantity button:active:focus{
+    border:none;
+    background: none;
+    outline: none;
+}
+
+.orderQuantity button:hover{
+    cursor: pointer;
+}
+
+.orderPrice{
+    margin-top: 0.1rem;
+    grid-column: 10 / 11;
+}
+
+.orderPrice h3{
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.orderCancel{
+    margin-top: 1.5rem;
+    margin-left: 3.5rem;
+    grid-column:  11 / 12;
+}
+
+.orderCancel button{
+    background: none;
+    outline: none;
+    border:none;
+    font-family: inherit;
+    font-size: 1rem;
+    color:#572E0D;
+}
+
+.orderCancel button:active:focus{
+    border:none;
+    background: none;
+    outline: none;
+}
+
+.orderCancel button:hover{
+    cursor: pointer;
+}
+
+/* remove scroll function in number input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.orderqtytxtbox{
+    border-radius: 8px;
+    border: rgb(154, 75, 13, 0.7) solid 1px;
+    background-color: #F9F3E2;
+    padding-left: 0.1rem;
+    height: 2rem;
+    outline:none;
+    resize: none;
+    text-align: left;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    transition: all 0.5s ease;
+}
+
+.orderSummary{
+    padding-bottom: 1rem;
+    border-bottom: #572E0D 2px solid;
+    margin:auto;
+    width: 90%;
+}
+
+.placeOrderContainer{
+    padding-bottom: 2rem;
+}
+
+.placeOrderButton{
+    border-radius: 20px;
+    background-color: #B57C48;
+    border: none;
+    width: 100%;
+    height: 2.5rem;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  	cursor: pointer;
+    margin: auto;
+    letter-spacing: 0.1rem;
+}
+
+.placeOrderButton:active {
+    background-color: #96653c;
+}
+
+.checkmark {
+    accent-color: #572E0D;
+    cursor: pointer;
+}

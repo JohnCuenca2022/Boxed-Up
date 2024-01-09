@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/menuStyle.css">
+    <link rel="stylesheet" href="styles/headerFooterStyle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation/css/font-awesome-animation.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://kit.fontawesome.com/8726264b68.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Menu</title>
+    <link rel="icon" href="assets/logo_regular.png">
+</head>
+<body>
+    <script type=module src=headerFooter.js></script>
+
+    <my-header></my-header>
+    <main>
+        <div class="menuContainer" id="menuContainer"></div>
+        <div class="orderPopUp" id="orderPopUp"></div>
+        <div class="popUpBox" id="popUpBox">
+            <div style="margin-left:2rem;margin-right:2rem;">
+                <div style="display:grid;grid-template-columns:repeat(2, 1fr);">
+                    <h3 style="text-align:left;font-family: Montserrat-SemiBold;overflow-wrap: anywhere;">NACHOS OVERLOAD</h3>
+                    <h3 style="text-align:right;">₱70.00</h3>
+                </div>
+                <h4 style="text-align:left;margin:0;font-family: Montserrat-Regular;">Quantity</h4>
+                <div style="display:grid;grid-template-columns:repeat(5, 1fr);">
+                    <div class="orderQuantity" style="grid-column:1/1;">
+                        <button id="subtractBtn" class="subtractBtn" style="text-align:right;margin-top:0.85rem;height:2rem;width:1.5rem;grid-column:2/3"><b>-</b></button>
+                        <input type="number" value="1" class="orderqtytxtbox" id="quantity"/>
+                        <button id="addBtn" class="addBtn"style="text-align:left;margin-top:0.85rem;height:2rem;width:1.5rem;grid-column:4/5"><b>+</b></button>
+                    </div>
+                </div>
+                <h4 style="text-align:left;margin-bottom:0.5rem;font-family: Montserrat-Regular;">Special Instructions</h4>
+                <div class="orderInstructions">
+                    <textarea class="ordertxtbox" id="orderInstruc"></textarea>
+                </div>
+            </div>
+            <div class="placeOrderContainer">
+                <button class="placeOrderButton" id="placeOrderButton">Add to Cart</button> 
+            </div>
+        </div>
+    </main>
+    <my-footer></my-footer>
+
+    <!--navbar highlight-->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="navActive.js"></script>
+</body>
+<script defer type="module" src="menuApp.js"></script>
+</html>

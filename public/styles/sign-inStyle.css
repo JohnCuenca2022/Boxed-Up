@@ -1,0 +1,81 @@
+@font-face { 
+    font-family: Montserrat-Thin;
+    src: url(fonts/Montserrat-Thin.otf);
+}
+
+.titleContainer{
+    padding-top: 12rem;
+}
+
+.titleContainer h1{
+    text-align:center;
+    font-size:46px;
+    line-height:40px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.rcorners1 {
+	margin: auto;
+    width: 70%;
+	border-radius: 20px;
+    background-color:#F6EED4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 2;
+}
+
+.rcorners1 #textitem{
+	padding-top: 1rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.rcorners1 #labelContainer{
+    width:85%;
+    text-align: center;
+    margin: auto;
+}
+
+.rcorners1 h2{
+    text-align: left;
+}
+
+.rcorners1 .txtbox {
+    border-radius: 20px;
+    border: #572E0D solid 2px;
+    background-color: #F9F3E2;
+    padding: 20px; 
+    width:80%;
+    height: 0.25rem;
+    outline:none; 
+    resize: none;
+}
+
+.rcorners1 #id_password {
+    border-radius: 20px;
+    border: #572E0D solid 2px;
+    background-color: #F9F3E2;
+    padding: 20px; 
+    width:80%;
+    height: 0.25rem;
+    outline:none; 
+    resize: none;
+}
+
+.rcorners1 .buttondiv{
+    border-radius: 20px;
+    background-color: #B57C48;
+    border: none;
+    width: 100%;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+  	cursor: pointer;
+    margin: auto;
+    display: block;
+}
+
+.rcorners1 .buttondiv:active {
+    background-color: #96653c;
+}

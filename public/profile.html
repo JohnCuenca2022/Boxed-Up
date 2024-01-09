@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/profileStyle.css">
+    <link rel="stylesheet" href="styles/headerFooterStyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation/css/font-awesome-animation.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://kit.fontawesome.com/8726264b68.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="jquery.min.js"></script>
+    <script src="jquery-csv.js"></script>
+    <title>Profile</title>
+    <link rel="icon" href="assets/logo_regular.png">
+</head>
+<body>
+    <script type=module src=headerFooter.js></script>
+
+    <my-header></my-header> 
+    <main>
+        <div class="title">
+            <h1>ACCOUNT</h1>
+        </div>
+        <div class="boxContainer">
+            <div class="box">
+                <div style="width:80%;margin-left: auto;margin-right: auto;display: block;">
+                    <div class="imageContainer">
+                        <img src="assets/default_profile.png" alt="profile image" id="profileImage";
+                        style="object-fit:cover; margin-left:auto;margin-right: auto; display: block; margin-top: 1.5rem;border-radius: 50%;">
+                    </div>
+                    <h2 style="text-align:center" id="displayname">User</h2>
+                    <button class="navbuttonselected" style="margin-top:3rem;margin-bottom:1rem;"id="profilebutton">PROFILE</button>
+                    <button class="navbutton" style="margin-bottom:8rem;"id="historybutton">ORDER HISTORY</button>
+                    <button class="navbutton" style="margin-bottom:2.5rem;"id="logout">LOG OUT</button>
+                </div>
+                
+            </div>
+            <div class="box2">
+                <div class="textitem" style="width:85%; margin:auto;" id="profile">
+                    <div style="margin:auto; display: grid; grid-template-columns: 
+                    repeat(2, 1fr); text-align: left;">
+                        <div>
+                            <div class="labelContainer">
+                                <h3>Firstname</h3>
+                            </div>
+                            <input type="text" class="txtbox" id="firstname" readonly style="font-size:1rem; width:90%;"/>
+                        </div>
+                        <div style = "margin-right: 0;">
+                            <div class="labelContainer">
+                                <h3>Lastname</h3>
+                            </div>
+                            <input type="text" class="txtbox" id="lastname" readonly style="font-size:1rem; width:90%;"/>
+                        </div>
+                    </div>
+                    
+                    <div class="labelContainer">
+                        <h3>Email</h3>
+                    </div>
+                    <input type="text" class="txtbox" id="email" readonly style="font-size:1rem;"/>
+                    <div class="labelContainer">
+                        <h3>Contact</h3>
+                    </div>
+                    <input type="text" class="txtbox" id="contact" readonly style="font-size:1rem;"/>
+                    <div class="labelContainer">
+                        <h3>Street Address</h3>
+                    </div>
+                    <input type="text" class="txtbox" id="street" readonly style="font-size:1rem;"/>
+                    <div style="margin:auto; display: grid; grid-template-columns: 
+                    repeat(2, 1fr); text-align: left;">
+                        <div>
+                            <div class="labelContainer">
+                                <h3>City</h3>
+                            </div>
+                            <input type="text" class="txtbox" id="city" readonly style="font-size:1rem; width:90%;"/>
+                        </div>
+                        <div style = "margin-right: 0;">
+                            <div class="labelContainer">
+                                <h3>Province</h3>
+                            </div>
+                            <input type="text" class="txtbox" id="province" readonly style="font-size:1rem; width:90%;"/>
+                        </div>
+                    </div>
+                    <div style="margin:auto; display: grid; grid-template-columns: 
+                    repeat(2, 1fr); text-align: left; padding-top: 2.5rem; padding-bottom: 2rem;">
+                        <div>
+                            <button class="buttondiv" id="editbutton">Edit</button> 
+                        </div>
+                        <div style = "margin-right: 0;">
+                            <button class="buttondiv" id="savebutton" disabled>Save</button> 
+                        </div>
+                    </div>
+                </div>
+                <div class="orderslist" id="orderslist">
+                    <p style="text-align:center;">No orders yet</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="orderPopUp" id="orderPopUp"></div>
+        <div class="popUpBox" id="popUpBox">
+            <div id="addImageContainer">
+                <div class="drag-area">                  
+                    <input type="file" hidden>
+                    <img id="imageid"src="" alt="image">
+                </div>
+                <button id="selbtn">Browse File</button>
+            </div>
+            <div id="popUpContent">
+
+            </div>
+        </div>   
+    </main>
+    <my-footer></my-footer>
+    <!--navbar highlight-->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="navActive.js"></script>
+</body>
+<script defer type="module" src="profileApp.js"></script>
+</html>

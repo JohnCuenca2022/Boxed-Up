@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/contactStyle.css">
+    <link rel="stylesheet" href="styles/headerFooterStyle.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation/css/font-awesome-animation.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://kit.fontawesome.com/8726264b68.js" crossorigin="anonymous"></script>
+
+    <title>Contact</title>
+    <link rel="icon" href="assets/logo_regular.png">
+</head>
+<body>
+    <script type=module src=headerFooter.js></script>
+
+    <my-header></my-header>
+    <main>
+        <div class="titleContainer">
+            <h1><em>CONTACT US</em></h1>
+	        <h2 style="text-align:center;font-family: Montserrat-italic;">Have questions? Check our FAQs page or contact us here.</h2>
+        </div>
+        <form action="https://formsubmit.co/219bdce1ccd4d35c4161d013c170a935" method="POST">
+            <div class="rcorners1">
+                <div id="textitem">
+                        <input type="hidden" name="_subject" value="New message from customer!">
+                        <div id="labelContainer">
+                            <h2><em>Name</em></h2>
+                        </div>
+                        <input type="text" name="name" required id="txtbox" style="font-size:18px;"/>
+                        <div id="labelContainer">
+                            <h2><em>Email</em></h2>
+                        </div>
+                        <input type="email" name="email" required id="txtbox" style="font-size:18px;"/>
+                        <div id="labelContainer">
+                            <h2><em>Message</em></h2>
+                        </div>
+                        
+                        <textarea style="margin-bottom: 2.5rem;" name="message" required id="txtboxlast"></textarea>
+                        <input type="hidden" name="_next" value="https://fir-boxedupph-hosting.web.app/thanks.html">
+                </div> 
+            </div>
+            <button style="margin-top: 1.5rem; margin-bottom: 5rem;" id="buttondiv" type="submit"><b>Send</b></button> 
+        </form>
+        <div class="contacts" style="text-align:center">
+            <a href="https://www.facebook.com/BoxedupPH/community" class="faa-parent animated-hover">
+                <i class="fa fa-solid fa-facebook-official faa-wrench" style="font-size:32px;display:inline-block;"></i>
+                <h2 style="display:inline-block;margin-right: 60px"><em>BOXED UP</em></h2>
+            </a>
+            <a href="https://www.instagram.com/boxed.upph/" class="faa-parent animated-hover">
+                <i class="fa fa-solid fa-instagram faa-wrench" style="font-size:36px;display:inline-block;"></i>
+                <h2 style="display:inline-block;margin-right: 50px;"><em>Boxed.upph</em></h2>
+            </a>
+            <a href="" class="faa-parent animated-hover">
+                <i class="fa fa-solid fa-phone faa-wrench" style="font-size:32px;display:inline-block;"></i>
+                <h2 style="display:inline-block;"><em>0995-074-6558 / 0905-336-4724</em></h2> 
+            </a>
+        </div>
+    </main>
+    <my-footer></my-footer>
+
+    <!--navbar highlight-->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="navActive.js"></script>
+</body>
+<script defer type="module" src="homeApp.js"></script>
+</html>

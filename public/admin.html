@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/adminStyle.css">
+    <link rel="stylesheet" href="styles/headerFooterStyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation/css/font-awesome-animation.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://kit.fontawesome.com/8726264b68.js" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="jquery.min.js"></script>
+    <script src="canvasjs.min.js"></script>
+    <title>Dashboard</title>
+    <link rel="icon" href="assets/logo_regular.png">
+</head>
+<body>
+    <script type=module src=headerFooter.js></script>
+
+    <my-header></my-header>
+    <main>
+        <div class="boxContainer">
+            <div class="box">
+                <div style="width:80%;margin-left: auto;margin-right: auto;display: block;">
+                    <img src="assets/default_profile.png" id="profileImage" alt="profile image" style="object-fit:cover; margin-left:auto;
+                    margin-right: auto; display: block; margin-top: 1.5rem;border-radius: 50%;">
+                    <h2 style="text-align:center;" id="displayname">User</h2>
+                    <h2 style="text-align:center;font-size:larger;font-family:Montserrat-Thin;">Admin</h2>
+                    <button class="navbuttonselected" style="margin-top:3rem;margin-bottom:1rem;"id="dashboardbutton">DASHBOARD</button>
+                    <button class="navbutton"style="margin-bottom:1rem;"id="ordersbutton">ORDERS</button>
+                    <button class="navbutton"style="margin-bottom:1rem;"id="usersbutton">USERS</button>
+                    <button class="navbutton"style="margin-bottom:1rem;"id="productsbutton">PRODUCTS</button>
+                    <button class="navbutton"style="margin-bottom:1rem;"id="reviewsbutton">REVIEWS</button>
+                    <button class="navbutton" style="margin-bottom:8rem;"id="changesbutton">CHANGES</button>
+                    <button class="navbutton" style="margin-bottom:2.5rem;"id="logout">LOG OUT</button>
+                </div>
+                
+            </div>
+            <div class="dashboardContainer" id="dashboardlist">
+                <div class="totalUsers" style="display: grid;grid-template-columns: repeat(2, 1fr);">
+                    <div style="grid-column:1 / 2;width:100%;margin: auto;">
+                        <div style="margin-left:1rem;background-color:#B57C48;border-radius:50%;width:6rem;height:6rem;">
+                            <h1 style="padding:0.75rem 1rem 1rem 1rem;margin:auto;line-height:0;font-size:4rem;color:white;">
+                                <span class="iconify" data-icon="ci:group"></span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div style="grid-column:2 / 3;width:100%;margin: auto;">
+                        <h1 style="padding-right:1rem;line-height:0;text-align:right;font-size:3rem;" id="totalusers"></h1>
+                        <h4 style="padding-right:1rem;text-align:right;">Total Users</h4>
+                    </div>
+                </div>
+
+                <div class="totalOrders" style="display: grid;grid-template-columns: repeat(2, 1fr);">
+                    <div style="grid-column:1 / 2;width:100%;margin: auto;">
+                        <div style="margin-left:1rem;background-color:#B57C48;border-radius:50%;width:6rem;height:6rem;">
+                            <h1 style="padding:1.3rem 1rem 1rem 1.4rem;margin:auto;font-size:3.25rem;color:white;">
+                                <span class="iconify" data-icon="icon-park-outline:knife-fork"></span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div style="grid-column:2 / 3;width:100%;margin: auto;">
+                        <h1 style="padding-right:1rem;line-height:0;text-align:right;font-size:3rem;" id="totalorders"></h1>
+                        <h4 style="padding-right:1rem;padding-left:0;text-align:right;white-space: nowrap;">Total Orders</h4>
+                    </div>
+                </div>
+
+                <div class="completedOrders" style="display: grid;grid-template-columns: repeat(2, 1fr);">
+                    <div style="grid-column:1 / 2;width:100%;margin: auto;">
+                        <div style="margin-left:1rem;background-color:#B57C48;border-radius:50%;width:6rem;height:6rem;">
+                            <h1 style="padding:1rem 1rem 1rem 1rem;margin:auto;font-size:4rem;color:white;">
+                                <span class="iconify" data-icon="mdi:moped-outline"></span>
+                            </h1>
+                        </div>
+                    </div>
+                    <div style="grid-column:2 / 3;width:100%;margin: auto;">
+                        <h1 style="padding-right:1rem;line-height:0;text-align:right;font-size:3rem;" id="comporders"></h1>
+                        <h4 style="padding-right:1rem;padding-left:0;text-align:right;">Completed Orders</h4>
+                    </div>
+                </div>
+                <div class="orderSummary">
+                    <h2 style="padding-left: 2rem;"><em>Orders Summary</em></h2>
+                    <div style="display: grid;grid-template-columns: repeat(3, 1fr);padding-left: 2rem;padding-right: 2rem;">
+                        <div style="border:3px solid white;padding-left:1rem;border-radius:20px 0 0 20px;">
+                            <h1 id="pendingHeader" style="margin-bottom:0;"></h1>
+                            <p style="color:#9A4B0D;opacity:0.7;">Pending</p>
+                        </div>
+                        <div style="border-top:3px solid white;border-bottom:3px solid white;padding-left:1rem;">
+                            <h1 id="acceptedHeader" style="margin-bottom:0;"></h1>
+                            <p style="color:#9A4B0D;opacity:0.7;">Accepted</p>
+                        </div>
+                        <div style="border:3px solid white;padding-left:1rem;border-radius:0 20px 20px 0;">
+                            <h1 id="completedHeader" style="margin-bottom:0;"></h1>
+                            <p style="color:#9A4B0D;opacity:0.7;">Completed</p>
+                        </div>
+                    </div>
+                    <div style="display: grid;grid-template-columns: repeat(2, 1fr);padding-left: 2rem;padding-right: 2rem;">
+                        <div id="graphChartContainer" style="height: 300px; width: 100%"></div>
+                        <div style="margin-top:auto;margin-bottom:auto;margin-right:0;">
+                            <div style="display: grid;grid-template-columns: repeat(2, 1fr);margin-bottom: 1rem;">
+                                <div style="text-align:right;">Pending</div>
+                                <div style="height:1rem;width:4.5rem;margin-left:1.5rem;background-color:#F9F5E5;border-radius:20px;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"></div>
+                            </div>
+                            <div style="display: grid;grid-template-columns: repeat(2, 1fr);margin-bottom: 1rem;">
+                                <div style="text-align:right;">Accepted</div>
+                                <div style="height:1rem;width:4.5rem;margin-left:1.5rem;background-color:#F4E9BD;border-radius:20px;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"></div>
+                            </div>
+                            <div style="display: grid;grid-template-columns: repeat(2, 1fr);margin-bottom: 1rem;">
+                                <div style="text-align:right;">Completed</div>
+                                <div style="height:1rem;width:4.5rem;margin-left:1.5rem;background-color:#E5C646;border-radius:20px;box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="monthlyRevenue">
+                    <button id="showReportsButton" class="editButton">Monthly Revenue</button>
+                    <p id="currentMonthSales" style="padding-left: 1rem;font-size: 3rem;margin:0;"></p>
+                    <div>
+                        <div id="chartContainer" style="height: 10rem; width: 100%;"></div>
+                    </div>
+                    <div id="tableContainer">
+
+                    </div>
+                    
+                      
+                </div>
+                <div class="recentChanges">
+                    <h2 style="padding-left: 1rem;"><em>Recent Changes</em></h2>
+                    <div id="recentChangesContainer" style="padding-left: 1rem;padding-right: 1rem;font-size: 0.8rem;">
+                        <div style="margin-bottom:1rem;text-align:left;display: grid;grid-template-columns: repeat(5, 1fr);color:rgba(154, 75, 13, 0.7)">
+                            <div style="grid-column: 1/3;">December 13, 2021 1:19:20 PM</div>
+                            <div style="grid-column: 3/5;">Header Image “sample.jpg” Added</div>
+                            <div style="grid-column: 5/6;">Taylor Hill</div>
+                        </div>
+                        <div style="margin-bottom:1rem;text-align:left;display: grid;grid-template-columns: repeat(5, 1fr);color:rgba(154, 75, 13, 0.7)">
+                            <div style="grid-column: 1/3;">December 13, 2021 1:19:20 PM</div>
+                            <div style="grid-column: 3/5;">Header Image “sample.jpg” Added</div>
+                            <div style="grid-column: 5/6;">Taylor Hill</div>
+                        </div>
+                        <div style="margin-bottom:1rem;text-align:left;display: grid;grid-template-columns: repeat(5, 1fr);color:rgba(154, 75, 13, 0.7)">
+                            <div style="grid-column: 1/3;">December 13, 2021 1:19:20 PM</div>
+                            <div style="grid-column: 3/5;">Header Image “sample.jpg” Added</div>
+                            <div style="grid-column: 5/6;">Taylor Hill</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box2" id="box2">
+                <div class="contentDisplay" id="orderslist">
+                    <h2><em>Orders List</em></h2>
+                    <div style="display:grid;grid-template-columns: repeat(4, 1fr);">
+                        <div class="dropContainer" 
+                        style="font-size:medium;padding-left:1rem;grid-column:1 / 2; outline:none;">
+                            <select name="Categories" class="categories">
+                                <option value="orderNo">Order ID</option>
+                                <option value="email">User ID</option>
+                                <option value="date">Date</option>
+                                <option value="status">Status</option>
+                                <option value="payment">Payment</option>
+                                <option value="total">Total</option>
+                            </select>
+                        </div>
+                        <input type="text" id="searchbar" name="searchbar" placeholder="Search">
+                    </div>
+                    <div style="display:grid;grid-template-columns: repeat(9, 1fr);color:#B57C48;text-align:center;">
+                        <h5 style="grid-column:1 / 3">Order ID</h5>
+                        <h5 style="grid-column:3 / 5">User ID</h5>
+                        <h5 style="grid-column:5 / 7">Date</h5>
+                        <h5 style="grid-column:7 / 8">Status</h5>
+                        <h5 style="grid-column:8 / 9">Payment</h5>
+                        <h5 style="grid-column:9 / 10">Total</h5>
+                    </div>
+                    <div class="itemDisplay" id="itemDisplayOrderscontent">
+                        
+                    </div>
+                </div>
+
+                <div class="contentDisplay" id="userslist">
+                    <h2><em>Users List</em></h2>
+                    <div style="display:grid;grid-template-columns: repeat(4, 1fr);">
+                        <div class="dropContainer" 
+                        style="font-size:medium;padding-left:1rem;grid-column:1 / 2; outline:none;">
+                            <select name="Categories" class="categories">
+                                <option value="userid">User ID</option>
+                                <option value="lastname">Lastname</option>
+                                <option value="firstname">Firstname</option>
+                                <option value="email">Email</option>
+                                <option value="role">Role</option>
+                                <option value="address">Address</option>
+                            </select>
+                        </div>
+                        <input type="text" id="searchbar" name="searchbar" placeholder="Search">
+                    </div>
+                    <div style="display:grid;grid-template-columns: repeat(6, 1fr);color:#B57C48;text-align:center;">
+                        <h5>User ID</h5>
+                        <h5>Lastname</h5>
+                        <h5>Firstname</h5>
+                        <h5>Email</h5>
+                        <h5>Role</h5>
+                        <h5>Address</h5>
+                    </div>
+                    <div class="itemDisplay" id="itemDisplayUserscontent">
+                        
+                    </div>
+                </div>
+
+                <div class="contentDisplay" id="productslist">
+                    <div style="display:grid;grid-template-columns: repeat(2, 1fr);">
+                        <h2 style="margin-left:0;text-align:left;"><em>Products List</em></h2>
+                        <button id="addProductButton">Add Product</button>
+                    </div>
+                    
+                    <div style="display:grid;grid-template-columns: repeat(4, 1fr);">
+                        <div class="dropContainer" 
+                        style="font-size:medium;padding-left:1rem;grid-column:1 / 2; outline:none;">
+                            <select name="Categories" class="categories">
+                                <option value="productid">Product ID</option>
+                                <option value="name">Name</option>
+                                <option value="price">Price</option>
+                                <option value="status">Status</option>
+                                <option value="image">Image</option>
+                            </select>
+                        </div>
+                        <input type="text" id="searchbar" name="searchbar" placeholder="Search">
+                    </div>
+                    <div style="display:grid;grid-template-columns: repeat(7, 1fr);color:#B57C48;text-align:center;">
+                        <h5>Product ID</h5>
+                        <h5>Name</h5>
+                        <h5>Price</h5>
+                        <h5>Quantity</h5>
+                        <h5>Status</h5>
+                        <h5>Image</h5>
+                    </div>
+                    <div class="itemDisplay" id="itemDisplayProductscontent">
+                        
+                    </div>
+                </div>
+
+                <div class="contentDisplay" id="reviewslist">
+                    <h2><em>Reviews</em></h2>
+                    <div style="display:grid;grid-template-columns: repeat(4, 1fr);">
+                        <div class="dropContainer" 
+                        style="font-size:medium;padding-left:1rem;grid-column:1 / 2; outline:none;">
+                            <select name="Categories" class="categories">
+                                <option value="reviewid">Review ID</option>
+                                <option value="date">Date</option>
+                                <option value="customer">Customer</option>
+                                <option value="orderno">Order No.</option>
+                                <option value="comment">Comment</option>
+                                <option value="rating">Rating</option>
+                                <option value="status">Status</option>
+                            </select>
+                        </div>
+                        <input type="text" id="searchbar" name="searchbar" placeholder="Search">
+                    </div>
+                    <div style="display:grid;grid-template-columns: repeat(7, 1fr);color:#B57C48;text-align:center;">
+                        <h5>Review ID</h5>
+                        <h5>Date</h5>
+                        <h5>Customer</h5>
+                        <h5>Order No.</h5>
+                        <h5>Comment</h5>
+                        <h5>Rating</h5>
+                        <h5>Status</h5>
+                    </div>
+                    <div class="itemDisplay" id="itemDisplayReviewscontent">
+                        
+                    </div>
+                </div>
+
+                <div class="contentDisplay" id="changeslist">
+                    <h2><em>Change History</em></h2>
+                    <div style="display:grid;grid-template-columns: repeat(4, 1fr);">
+                        <div class="dropContainer" 
+                        style="font-size:medium;padding-left:1rem;grid-column:1 / 2; outline:none;">
+                            <select name="Categories" class="categories">
+                                <option value="date">Date</option>
+                                <option value="changedby">Changed By</option>
+                                <option value="section">Section</option>
+                                <option value="description">Description</option>
+                            </select>
+                        </div>
+                        <input type="text" id="searchbar" name="searchbar" placeholder="Search">
+                    </div>
+                    <div style="display:grid;grid-template-columns: repeat(10, 1fr);color:#B57C48;text-align:center;">
+                        <h5 style="grid-column:1 / 4">Date</h5>
+                        <h5 style="grid-column:4 / 6">Changed By</h5>
+                        <h5 style="grid-column:6 / 7">Section</h5>
+                        <h5 style="grid-column:7 / 11">Description</h5>
+                    </div>
+                    <div class="itemDisplay" id="itemDisplayChangescontent">
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="orderPopUp" id="orderPopUp"></div>
+        <div class="popUpBox" id="popUpBox">
+            <div id="addImageContainer">
+                <div class="drag-area">                
+                    <input type="file" hidden>
+                    <img id="imageid"src="" alt="image">
+                </div>
+                <button id="selbtn">Browse File</button>
+            </div>
+            <div id="popUpContent">
+
+            </div>
+        </div>
+    </main>
+    <my-footer></my-footer>
+    <!--navbar highlight-->
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="navActive.js"></script>
+</body>
+<script defer type="module" src="adminApp.js"></script>
+</html>

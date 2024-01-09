@@ -1,0 +1,54 @@
+@font-face { 
+    font-family: Montserrat-italic;
+    src: url(fonts/Montserrat-ThinItalic.otf);
+}
+
+#text{
+	padding-top: 15rem;
+    padding-left: 50px;
+    padding-bottom: 10rem;
+}
+
+#text .collapsible {
+    background-color: rgba(255,255,255,0);
+    color: #572E0D;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    height: 60px;
+}
+
+#text button p{
+    margin-right:auto;
+    font-family: Montserrat-italic;
+    font-size: 28px;
+}
+
+#text .active, .collapsible:hover {
+    background-color: transparent;
+}
+
+#text .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: rgba(255,255,255,0);
+}
+
+#text .collapsible:after {
+    content: '\002B';
+    color: #9A4B0DB2;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    font-size:3em;
+    background-color: transparent;
+}
+
+#text .active:after {
+    content: "\2212";
+}
